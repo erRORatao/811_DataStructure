@@ -91,6 +91,9 @@ bool Link_Goout(LinkQueue& Q, int& x) {
 		LinkNode* Node;
 		Node = Q.front;
 		Q.front = Q.front->next;
+		if (LinkEmpty(Q)) {
+			Q.rear = Q.front;
+		}
 		free(Node);
 		return true;
 	}
